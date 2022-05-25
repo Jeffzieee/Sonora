@@ -13,6 +13,7 @@
         android:layout_height="62dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#BDA62C"
+        android:elegantTextHeight="true"
         android:fontFamily="@font/bakbakone_regular"
         android:text="RETRY"
         android:textSize="28sp"
