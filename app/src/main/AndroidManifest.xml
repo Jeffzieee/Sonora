@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codered.sonora">
 
     <application
         android:allowBackup="true"
@@ -8,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sonora">
-        <activity
-            android:name=".retryActivity"
-            android:exported="false" />
+        <activity android:name=".retryActivity"></activity>
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
