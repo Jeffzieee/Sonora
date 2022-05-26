@@ -8,7 +8,7 @@
     tools:context=".retryActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_retry"
         android:layout_width="174dp"
         android:layout_height="62dp"
         android:background="@drawable/curve_shape"
@@ -29,7 +29,7 @@
         android:id="@+id/imageView"
         android:layout_width="202dp"
         android:layout_height="284dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_retry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"

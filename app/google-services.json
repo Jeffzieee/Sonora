@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "835768303642",
+    "project_id": "sonora-b64bc",
+    "storage_bucket": "sonora-b64bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835768303642:android:e64bb2469ec0bab07711a3",
+        "android_client_info": {
+          "package_name": "com.codered.sonora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835768303642-pfj9tnnoag00veh8hj7cfulnrvetmrkn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCBuBR-rZBoqS-Y5ew7VslW6sdnaGu5iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835768303642-pfj9tnnoag00veh8hj7cfulnrvetmrkn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
