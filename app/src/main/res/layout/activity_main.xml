@@ -7,19 +7,19 @@
     android:background="#CC010101"
     tools:context=".MainActivity" >
 
+    //
+
     <ImageView
-        android:id="@+id/logo_Sonoro1"
+        android:id="@+id/logo_Sonoro"
         android:layout_width="78dp"
         android:layout_height="79dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045"
+        app:layout_constraintVertical_bias="0.048"
         app:srcCompat="@drawable/ic_logo_sonoro" />
-
-    //
 
     <TextView
         android:id="@+id/textView"
@@ -32,22 +32,42 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_Sonoro1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.131" />
 
     <View
         android:id="@+id/view"
-        android:layout_width="329dp"
-        android:layout_height="524dp"
+        android:layout_width="336dp"
+        android:layout_height="570dp"
         android:background="@drawable/curve_shape_two"
         android:backgroundTint="#1BC4C4C4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintVertical_bias="0.879" />
+
+    <EditText
+        android:id="@+id/passwordText"
+        android:layout_width="307dp"
+        android:layout_height="44dp"
+        android:drawableRight="@drawable/ic_hidepass"
+        android:elegantTextHeight="true"
+        android:ems="10"
+        android:fontFamily="@font/bakbakone_regular"
+        android:inputType="textPersonName"
+        android:hint="Password"
+        android:textColorHint="#FFDFDBDB"
+        android:textColor="#FFDFDBDB"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
     <Button
         android:id="@+id/button"
@@ -62,8 +82,43 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.698" />
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="307dp"
+        android:layout_height="44dp"
+        android:autoText="false"
+        android:elegantTextHeight="true"
+        android:ems="10"
+        android:fontFamily="@font/bakbakone_regular"
+        android:inputType="textPersonName"
+        android:hint="E-mail id"
+        android:textColorHint="#FFDFDBDB"
+        android:textColor="#FFDFDBDB"
+        android:textSize="20sp"
+        app:guidelineUseRtl="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="159dp"
+        android:layout_height="34dp"
+        android:text="Forgot Password?"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.553" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
