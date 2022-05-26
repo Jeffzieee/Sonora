@@ -9,8 +9,8 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="337dp"
-        android:layout_height="697dp"
+        android:layout_width="385dp"
+        android:layout_height="720dp"
         android:background="@drawable/curve_shape_two"
         android:backgroundTint="#1BC4C4C4"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,14 +21,14 @@
 
     <EditText
         android:id="@+id/emailText"
-        android:layout_width="325dp"
+        android:layout_width="357dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
         android:elegantTextHeight="true"
         android:ems="10"
         android:fontFamily="@font/bakbakone_regular"
-        android:hint="  E-mail"
+        android:hint="    E-mail"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
         android:textSize="22sp"
@@ -42,7 +42,7 @@
 
     <EditText
         android:id="@+id/userName"
-        android:layout_width="325dp"
+        android:layout_width="357dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
 
@@ -50,30 +50,29 @@
         android:elegantTextHeight="true"
         android:ems="10"
         android:fontFamily="@font/bakbakone_regular"
-        android:hint=" Name"
+        android:hint="    Name"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
         android:textSize="22sp"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <EditText
         android:id="@+id/passText"
-        android:layout_width="325dp"
+        android:layout_width="357dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
 
         android:backgroundTint="#99C4C4C4"
+        android:drawableRight="@drawable/ic_hidepass"
         android:elegantTextHeight="true"
         android:ems="10"
         android:fontFamily="@font/bakbakone_regular"
-        android:hint=" Password"
-        android:drawableRight="@drawable/ic_hidepass"
+        android:hint="    Password"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
         android:textSize="22sp"
@@ -85,15 +84,15 @@
 
     <EditText
         android:id="@+id/confirmpassText"
-        android:layout_width="325dp"
+        android:layout_width="357dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
-        android:drawableRight="@drawable/ic_hidepass"
         android:backgroundTint="#99C4C4C4"
+        android:drawableRight="@drawable/ic_hidepass"
         android:elegantTextHeight="true"
         android:ems="10"
         android:fontFamily="@font/bakbakone_regular"
-        android:hint=" Confirm-Password"
+        android:hint="    Confirm-Password"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
         android:textSize="22sp"
