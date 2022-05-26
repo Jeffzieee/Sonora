@@ -38,5 +38,9 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG).show()
                 }
             }
+            binding.signupTextView.setOnClickListener{
+                val intent = Intent(this,signupActivity::class.java)
+                startActivity(intent)
+            }
         }
     }

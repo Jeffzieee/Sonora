@@ -50,6 +50,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.879" />
 
+    <TextView
+        android:id="@+id/signupTextView"
+        android:layout_width="248dp"
+        android:layout_height="40dp"
+        android:text="Not registered yet? Sign Up."
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.64"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955" />
+
     <EditText
         android:id="@+id/passText"
         android:layout_width="307dp"
