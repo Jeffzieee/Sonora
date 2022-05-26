@@ -4,56 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CC010101"
     tools:context=".signupActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="337dp"
+        android:layout_height="697dp"
+        android:background="@drawable/curve_shape_two"
+        android:backgroundTint="#1BC4C4C4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561" />
 
     <EditText
         android:id="@+id/emailText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+        android:backgroundTint="#99C4C4C4"
+        android:elegantTextHeight="true"
         android:ems="10"
+        android:fontFamily="@font/bakbakone_regular"
+        android:hint="  E-mail"
         android:inputType="textPersonName"
-        android:hint="E-mail"
+        android:textColorHint="#FFDFDBDB"
+        android:textSize="22sp"
+        android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintVertical_bias="0.19" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+
+        android:backgroundTint="#99C4C4C4"
+        android:elegantTextHeight="true"
+        android:ems="10"
+        android:fontFamily="@font/bakbakone_regular"
+        android:hint=" Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#FFDFDBDB"
+        android:textSize="22sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32" />
 
     <EditText
         android:id="@+id/passText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+
+        android:backgroundTint="#99C4C4C4"
+        android:elegantTextHeight="true"
         android:ems="10"
+        android:fontFamily="@font/bakbakone_regular"
+        android:hint=" Password"
+        android:drawableRight="@drawable/ic_hidepass"
         android:inputType="textPersonName"
-        android:hint="Password"
+        android:textColorHint="#FFDFDBDB"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.463" />
 
     <EditText
         android:id="@+id/confirmpassText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+        android:drawableRight="@drawable/ic_hidepass"
+        android:backgroundTint="#99C4C4C4"
+        android:elegantTextHeight="true"
         android:ems="10"
+        android:fontFamily="@font/bakbakone_regular"
+        android:hint=" Confirm-Password"
         android:inputType="textPersonName"
-        android:hint="Confirm-Password"
+        android:textColorHint="#FFDFDBDB"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.601" />
 
     <Button
         android:id="@+id/btn_Signup"
         android:layout_width="138dp"
         android:layout_height="60dp"
-        android:text="Button"
+        android:background="@drawable/curve_shape"
+        android:backgroundTint="#BDA62C"
+        android:elegantTextHeight="true"
+        android:fontFamily="@font/bakbakone_regular"
+        android:text="SIGNUP"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.752" />
 </androidx.constraintlayout.widget.ConstraintLayout>
