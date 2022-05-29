@@ -7,6 +7,8 @@ import android.widget.*
 import com.codered.sonora.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 
+//random
+
 class signupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
