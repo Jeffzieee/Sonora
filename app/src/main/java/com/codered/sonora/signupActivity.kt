@@ -31,7 +31,9 @@ class signupActivity : AppCompatActivity() {
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                         } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this,retryActivity::class.java)
+                            intent.putExtra("error",it.exception?.message)
+                            startActivity(intent)
 
                         }
                     }
@@ -42,6 +44,10 @@ class signupActivity : AppCompatActivity() {
                 Toast.makeText(this, "One or more fields are empty. Please Re-enter", Toast.LENGTH_SHORT).show()
 
             }
+        }
+
+        binding.btnReturn.setOnClickListener{
+            finish()
         }
     }
 }

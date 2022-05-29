@@ -25,9 +25,8 @@
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="true"
+        android:elegantTextHeight="false"
         android:ems="10"
-        android:fontFamily="@font/bakbakone_regular"
         android:hint="  E-mail"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
@@ -35,10 +34,9 @@
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.313" />
 
     <EditText
         android:id="@+id/userName"
@@ -47,9 +45,8 @@
         android:background="@drawable/curve_shape"
 
         android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="true"
+        android:elegantTextHeight="false"
         android:ems="10"
-        android:fontFamily="@font/bakbakone_regular"
         android:hint=" Name"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
@@ -57,10 +54,9 @@
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.186" />
 
     <EditText
         android:id="@+id/passText"
@@ -69,11 +65,10 @@
         android:background="@drawable/curve_shape"
 
         android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="true"
+        android:drawableRight="@drawable/ic_showpass"
+        android:elegantTextHeight="false"
         android:ems="10"
-        android:fontFamily="@font/bakbakone_regular"
         android:hint=" Password"
-        android:drawableRight="@drawable/ic_hidepass"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
         android:textSize="22sp"
@@ -88,11 +83,9 @@
         android:layout_width="325dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
-        android:drawableRight="@drawable/ic_hidepass"
         android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="true"
+        android:elegantTextHeight="false"
         android:ems="10"
-        android:fontFamily="@font/bakbakone_regular"
         android:hint=" Confirm-Password"
         android:inputType="textPersonName"
         android:textColorHint="#FFDFDBDB"
@@ -119,4 +112,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.752" />
+
+    <ImageView
+        android:id="@+id/btn_Return"
+        android:layout_width="26dp"
+        android:layout_height="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/ic_back_button" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

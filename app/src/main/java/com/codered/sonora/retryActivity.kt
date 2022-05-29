@@ -12,9 +12,9 @@ class retryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRetryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.exceptionText.setText(intent.extras?.getString("error"))
         binding.btnRetry.setOnClickListener{
-            exitProcess(0)
+            finish()
         }
     }
 }

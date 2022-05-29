@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
                             startActivity(intent)
                         }
                         else{
-                            Toast.makeText(applicationContext,it.exception.toString(),
-                                Toast.LENGTH_LONG).show()
+                            val intent = Intent(this,retryActivity::class.java)
+                            intent.putExtra("error",it.exception?.message)
+                            startActivity(intent)
                         }
                     }
                 }
