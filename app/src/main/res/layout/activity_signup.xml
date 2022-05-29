@@ -7,94 +7,144 @@
     android:background="#CC010101"
     tools:context=".signupActivity">
 
+
+    <TextView
+        android:id="@+id/signupText"
+        android:layout_width="333dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/bakbakone_regular"
+        android:text="SIGN UP"
+        android:textAlignment="center"
+        android:textColor="#FFDFDBDB"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <View
         android:id="@+id/view"
-        android:layout_width="337dp"
-        android:layout_height="697dp"
+        android:layout_width="367dp"
+        android:layout_height="735dp"
         android:background="@drawable/curve_shape_two"
         android:backgroundTint="#1BC4C4C4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561" />
+        app:layout_constraintVertical_bias="0.762" />
 
-    <EditText
-        android:id="@+id/emailText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTextLayout"
         android:layout_width="325dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="false"
-        android:ems="10"
-        android:hint="  E-mail"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFDFDBDB"
-        android:textSize="22sp"
-        android:typeface="normal"
+        app:hintEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintVertical_bias="0.32">
 
-    <EditText
-        android:id="@+id/userName"
-        android:layout_width="325dp"
-        android:layout_height="47dp"
-        android:background="@drawable/curve_shape"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="#FFDFDBDB"
+            android:textSize="20sp" />
 
-        android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="false"
-        android:ems="10"
-        android:hint=" Name"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFDFDBDB"
-        android:textSize="22sp"
-        android:typeface="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/passText"
-        android:layout_width="325dp"
-        android:layout_height="47dp"
-        android:background="@drawable/curve_shape"
-
-        android:backgroundTint="#99C4C4C4"
-        android:drawableRight="@drawable/ic_showpass"
-        android:elegantTextHeight="false"
-        android:ems="10"
-        android:hint=" Password"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFDFDBDB"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.463" />
-
-    <EditText
-        android:id="@+id/confirmpassText"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameTextLayout"
         android:layout_width="325dp"
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
-        android:elegantTextHeight="false"
-        android:ems="10"
-        android:hint=" Confirm-Password"
-        android:inputType="textPersonName"
-        android:textColorHint="#FFDFDBDB"
-        android:textSize="22sp"
+        app:hintEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601" />
+        app:layout_constraintVertical_bias="0.18">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:hint="Username"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="#FFDFDBDB"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passTextLayout"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+        android:backgroundTint="#99C4C4C4"
+        app:passwordToggleEnabled="true"
+        app:hintEnabled="false"
+        app:endIconMode="password_toggle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="#FFDFDBDB"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmpassTextLayout"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+        android:backgroundTint="#99C4C4C4"
+        app:passwordToggleEnabled="true"
+        app:hintEnabled="false"
+        app:endIconMode="password_toggle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59000003">>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmpassText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:textColorHint="#FFDFDBDB"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_Signup"
@@ -111,7 +161,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.782" />
 
     <ImageView
         android:id="@+id/btn_Return"
