@@ -7,6 +7,31 @@
     android:background="#CC010101"
     tools:context=".MainActivity" >
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailTextLayout"
+        android:layout_width="307dp"
+        android:layout_height="44dp"
+        app:hintEnabled="false"
+        app:startIconDrawable="@drawable/ic_mail"
+        app:startIconTint="#FFDFDBDB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFDFDBDB"
+            android:textColorHint="#FFDFDBDB"
+            android:textSize="20sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <ImageView
         android:id="@+id/logo_Sonoro"
         android:layout_width="78dp"
@@ -70,6 +95,8 @@
         app:passwordToggleEnabled="true"
         app:hintEnabled="false"
         app:endIconMode="password_toggle"
+        app:startIconDrawable="@drawable/ic_password"
+        app:startIconTint="#FFDFDBDB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +123,7 @@
         android:backgroundTint="#BDA62C"
         android:elegantTextHeight="true"
         android:fontFamily="@font/bakbakone_regular"
-        android:text="CONTINUE"
+        android:text="LOG IN"
         android:textAlignment="center"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,25 +132,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.749" />
-
-    <EditText
-        android:id="@+id/emailText"
-        android:layout_width="307dp"
-        android:layout_height="44dp"
-        android:autoText="false"
-        android:elegantTextHeight="false"
-        android:ems="10"
-        android:hint="E-mail id"
-        android:inputType="textPersonName"
-        android:textColor="#FFDFDBDB"
-        android:textColorHint="#FFDFDBDB"
-        android:textSize="20sp"
-        app:guidelineUseRtl="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.364" />
 
     <TextView
         android:id="@+id/forgotPass"

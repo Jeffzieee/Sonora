@@ -8,6 +8,33 @@
     tools:context=".signupActivity">
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneTextLayout"
+        android:layout_width="325dp"
+        android:layout_height="47dp"
+        android:background="@drawable/curve_shape"
+        android:backgroundTint="#99C4C4C4"
+        app:hintEnabled="false"
+        app:startIconDrawable="@drawable/ic_phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:hint="Phone"
+            android:inputType="number"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:id="@+id/signupText"
         android:layout_width="333dp"
@@ -43,11 +70,12 @@
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
         app:hintEnabled="false"
+        app:startIconDrawable="@drawable/ic_mail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32">
+        app:layout_constraintVertical_bias="0.43">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailText"
@@ -57,7 +85,7 @@
             android:hint="E-mail"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
-            android:textColorHint="#FFDFDBDB"
+            android:textColorHint="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,11 +97,12 @@
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
         app:hintEnabled="false"
+        app:startIconDrawable="@drawable/ic_user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18">
+        app:layout_constraintVertical_bias="0.19999999">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameText"
@@ -83,7 +112,7 @@
             android:hint="Username"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textColorHint="#FFDFDBDB"
+            android:textColorHint="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -94,14 +123,14 @@
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
-        app:passwordToggleEnabled="true"
         app:hintEnabled="false"
-        app:endIconMode="password_toggle"
+        app:startIconDrawable="@drawable/ic_password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45">>
+        app:layout_constraintVertical_bias="0.55"
+        app:passwordToggleEnabled="true">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passText"
@@ -111,7 +140,7 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:textColor="@color/black"
-            android:textColorHint="#FFDFDBDB"
+            android:textColorHint="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -123,14 +152,14 @@
         android:layout_height="47dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#99C4C4C4"
-        app:passwordToggleEnabled="true"
         app:hintEnabled="false"
-        app:endIconMode="password_toggle"
+        app:startIconDrawable="@drawable/ic_password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59000003">>
+        app:layout_constraintVertical_bias="0.68"
+        app:passwordToggleEnabled="true">>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/confirmpassText"
@@ -140,7 +169,7 @@
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textColor="@color/black"
-            android:textColorHint="#FFDFDBDB"
+            android:textColorHint="@color/black"
             android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -154,14 +183,14 @@
         android:backgroundTint="#BDA62C"
         android:elegantTextHeight="true"
         android:fontFamily="@font/bakbakone_regular"
-        android:text="SIGNUP"
+        android:text="SIGN UP"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782" />
+        app:layout_constraintVertical_bias="0.81" />
 
     <ImageView
         android:id="@+id/btn_Return"
