@@ -1,23 +1,32 @@
+/* SONORA - LOG IN Activity
+   Language - Kotlin
+   Code - jeffzieee
+   Team - CodeRED. 2022
+ */
+
 package com.codered.sonora
 
+//Importing Dependancies
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.codered.sonora.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
+    //variable declaratiopn
     private lateinit var binding: ActivityMainBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
+            //binding layout data
             binding= ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
             firebaseAuth = FirebaseAuth.getInstance()
 
+        //LOG IN Button Listener
             binding.btnLogin.setOnClickListener{
                 val email = binding.emailText.text.toString()
                 val pass = binding.passText.text.toString()
@@ -40,6 +49,8 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_LONG).show()
                 }
             }
+
+           //Intenting to Sign Up
             binding.signupTextView.setOnClickListener{
                 val intent = Intent(this,signupActivity::class.java)
                 startActivity(intent)
