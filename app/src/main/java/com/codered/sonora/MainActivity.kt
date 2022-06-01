@@ -9,15 +9,24 @@ package com.codered.sonora
 //Importing Dependancies
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.content.Intent
+import com.codered.sonora.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
     //variable declaratiopn
-
+    private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
-
-
+        Handler(Looper.getMainLooper()!!).postDelayed({
+            val intent = Intent(this,login.loginActivity::class.java)
+            startActivity(intent)
+            finish()
+        },1500)
 
         }
     }

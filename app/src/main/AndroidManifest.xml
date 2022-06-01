@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Sonora">
         <activity
             android:name="login.successActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name="login.signupActivity"
             android:exported="false"
@@ -25,11 +26,11 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="login.loginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="login.loginActivity"
+            android:name="MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
