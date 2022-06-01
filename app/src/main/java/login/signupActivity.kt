@@ -45,6 +45,8 @@ class signupActivity : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             saveuserData(sonoradb,firebaseAuth.currentUser!!.uid,username,phone,email)
+                            val intent = Intent(this,successActivity::class.java)
+                            startActivity(intent)
                             finish()
                         } else {
                             val intent = Intent(this,retryActivity::class.java)

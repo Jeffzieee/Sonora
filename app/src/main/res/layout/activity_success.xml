@@ -5,48 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CC010101"
-    tools:context="login.retryActivity">
+    tools:context="login.successActivity">
 
     <Button
-        android:id="@+id/btn_retry"
+        android:id="@+id/btn_continue"
         android:layout_width="174dp"
         android:layout_height="62dp"
         android:background="@drawable/curve_shape"
         android:backgroundTint="#BDA62C"
         android:elegantTextHeight="true"
         android:fontFamily="@font/bakbakone_regular"
-        android:text="RETRY"
+        android:text="CONTINUE"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.819" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="252dp"
-        android:layout_height="324dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_retry"
+        android:id="@+id/imageView3"
+        android:layout_width="330dp"
+        android:layout_height="333dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443"
-        app:srcCompat="@drawable/retry" />
+        app:layout_constraintVertical_bias="0.338"
+        app:srcCompat="@drawable/success" />
 
     <TextView
-        android:id="@+id/exceptionText"
-        android:layout_width="341dp"
-        android:layout_height="168dp"
-        android:text=""
+        android:id="@+id/textView2"
+        android:layout_width="360dp"
+        android:layout_height="96dp"
+        android:fontFamily="@font/bakbakone_regular"
+        android:text="SUCCESS"
         android:textAlignment="center"
         android:textColor="#FFDFDBDB"
-        android:textSize="22sp"
+        android:textSize="55sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.702" />
 </androidx.constraintlayout.widget.ConstraintLayout>

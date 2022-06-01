@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sonora">
         <activity
+            android:name="login.successActivity"
+            android:exported="false" />
+        <activity
             android:name="login.signupActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
