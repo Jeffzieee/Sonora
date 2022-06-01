@@ -1,10 +1,10 @@
-/* SONORA - RETRY Activity
+/* SONORA - SIGN UP Activity
    Language - Kotlin
    Code - jeffzieee
    Team - CodeRED. 2022
  */
 
-package com.codered.sonora
+package login
 
 //Importing Depaendancies
 import android.content.Intent

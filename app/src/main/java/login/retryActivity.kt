@@ -4,7 +4,7 @@
    Team - CodeRED. 2022
  */
 
-package com.codered.sonora
+package login
 
 //Importing Depaendancies
 import androidx.appcompat.app.AppCompatActivity
