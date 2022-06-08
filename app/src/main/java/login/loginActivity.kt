@@ -10,6 +10,7 @@ package login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.widget.Toast
 import com.codered.sonora.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +19,7 @@ class loginActivity : AppCompatActivity() {
     //variable declaratiopn
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    var currentTime : Long = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +28,12 @@ class loginActivity : AppCompatActivity() {
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
 
+
         //LOG IN Button Listener
         binding.btnLogin.setOnClickListener{
+               if(SystemClock.elapsedRealtime()-currentTime<1000)
+                   return@setOnClickListener
+
             val email = binding.emailText.text.toString()
             val pass = binding.passText.text.toString()
 
@@ -48,12 +54,18 @@ class loginActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,"One or more fields are empty. Please Re-enter",
                     Toast.LENGTH_LONG).show()
             }
+            currentTime  = SystemClock.elapsedRealtime()
         }
 
         //Intenting to Sign Up
         binding.signupTextView.setOnClickListener{
+            if(SystemClock.elapsedRealtime()-currentTime<1000)
+                return@setOnClickListener
+
             val intent = Intent(this,signupActivity::class.java)
             startActivity(intent)
+
+            currentTime  = SystemClock.elapsedRealtime()
         }
 
 
