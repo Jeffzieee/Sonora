@@ -42,7 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.048"
-        app:srcCompat="@drawable/ic_logo_sonoro" />
+        app:srcCompat="@drawable/ic_logo_sonora" />
 
     <TextView
         android:id="@+id/textView"
