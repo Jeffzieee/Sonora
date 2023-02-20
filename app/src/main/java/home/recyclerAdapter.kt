@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -16,7 +16,7 @@ class recyclerAdapter(private val context : Context) : RecyclerView.Adapter<recy
     private val trackList = ArrayList<track>()
 
     public class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
-        val imgurl : ImageButton = itemView.findViewById(R.id.imgurl)
+        val imgurl : ImageView = itemView.findViewById(R.id.imgae)
         val title : TextView = itemView.findViewById(R.id.title)
         val artist : TextView = itemView.findViewById(R.id.artist)
     }
@@ -31,16 +31,19 @@ class recyclerAdapter(private val context : Context) : RecyclerView.Adapter<recy
         val tracks = trackList[position]
         holder.artist.text = tracks.artist
         holder.title.text = tracks.title
-        Glide.with(context).load(trackList[position].imgurl).into(holder.imgurl)
+
+        Glide.with(context).load(tracks.imgurl).into(holder.imgurl)
+
+
     }
     override fun getItemCount(): Int {
     return trackList.size
     }
 
-    fun updateTrackList(userList : List<track>){
+    fun updateTrackList(trackList : List<track>){
 
         this.trackList.clear()
-        this.trackList.addAll(userList)
+        this.trackList.addAll(trackList)
         notifyDataSetChanged()
 
     }

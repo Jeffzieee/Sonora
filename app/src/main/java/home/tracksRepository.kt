@@ -5,7 +5,7 @@ import com.google.firebase.database.*
 
 class tracksRepository {
     private val databaseReference: DatabaseReference =
-        FirebaseDatabase.getInstance().getReference("tracks")
+        FirebaseDatabase.getInstance().getReference("tracks").child("common")
 
     @Volatile
     private var INSTANCE: tracksRepository? = null
