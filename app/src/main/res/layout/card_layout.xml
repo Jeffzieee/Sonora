@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@drawable/curve_shape"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="6dp"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal" />
+
+        <ImageButton
+            android:id="@+id/imgurl"
+            android:layout_width="78dp"
+            android:layout_height="79dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/curve_shape"
+            android:contentDescription=" "
+            android:padding="0dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="Track Name"
+            android:textColor="#FFDFDBDB"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="Artist"
+            android:textColor="#FFDFDBDB"
+            android:textSize="20sp" />
+
+</androidx.cardview.widget.CardView>

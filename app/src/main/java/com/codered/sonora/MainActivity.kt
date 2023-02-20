@@ -14,8 +14,12 @@ import android.os.Looper
 import android.content.Intent
 import com.codered.sonora.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
+
     //variable declaratiopn
+
+
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
