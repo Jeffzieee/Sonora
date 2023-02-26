@@ -1,3 +1,9 @@
+/* SONORA - tracks Repository
+   Language - Kotlin
+   Code - jeffzieee
+   Team - CodeRED. 2022
+ */
+
 package home
 
 import androidx.lifecycle.MutableLiveData

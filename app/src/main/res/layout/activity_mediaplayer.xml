@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/activity_mediaplayer"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/audio_view"
+        android:layout_width="425dp"
+        android:layout_height="903dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="920dp"
+            android:src="@drawable/home_background" />
+
+        <ImageView
+            android:id="@+id/audioImg"
+            android:layout_width="wrap_content"
+            android:layout_height="345dp"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="275sp"
+            android:layout_marginEnd="10sp"
+            android:background="@drawable/curve_shape_two"
+            app:srcCompat="@drawable/ic_logo_sonora"
+            tools:ignore="MissingConstraints" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </com.google.android.exoplayer2.ui.PlayerView>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

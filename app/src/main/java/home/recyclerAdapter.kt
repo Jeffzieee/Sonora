@@ -1,3 +1,9 @@
+/* SONORA - recycler Adapter
+   Language - Kotlin
+   Code - jeffzieee
+   Team - CodeRED. 2022
+ */
+
 package home
 
 import android.content.Context

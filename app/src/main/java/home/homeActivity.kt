@@ -1,3 +1,9 @@
+/* SONORA - HOME Activity
+   Language - Kotlin
+   Code - jeffzieee
+   Team - CodeRED. 2022
+ */
+
 package home
 
 import androidx.appcompat.app.AppCompatActivity
