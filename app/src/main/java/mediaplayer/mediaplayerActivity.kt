@@ -1,3 +1,9 @@
+/* SONORA - MEDIAPLAYER Activity
+   Language - Kotlin
+   Code - jeffzieee
+   Team - CodeRED. 2022
+ */
+
 package mediaplayer
 
 import android.annotation.SuppressLint
@@ -23,17 +29,21 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
     private lateinit var progressBar: ProgressBar
     private lateinit var titleTv: TextView
 
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mediaplayer)
+
+        var imgUrl = intent.extras?.getString("imgUrl")
         progressBar = findViewById(R.id.progressBar)
 
         titleTv = findViewById(R.id.title)
         Glide.with(applicationContext)
-            .load("https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgStill.jpg?alt=media&token=dd9a63ab-e752-485f-8d60-63b56d9dbd17")
+            .load(imgUrl)
             .transform(RoundedCorners(100))
             .into(findViewById(R.id.audioImg))
+
         setupPlayer()
         addMP3()
 

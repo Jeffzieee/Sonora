@@ -8,6 +8,7 @@ package home
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.*
+import java.util.Collections
 
 class tracksRepository {
     private val databaseReference: DatabaseReference =
@@ -38,7 +39,8 @@ class tracksRepository {
 
                     }
 
-                    trackList.postValue(_trackList)
+                    val recommended_tracks = engageRecommendationEngine(_trackList)
+                    trackList.postValue(recommended_tracks)
 
                 } catch (e: Exception) {
 
@@ -48,11 +50,15 @@ class tracksRepository {
 
             }
 
+
+
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
 
-
+            fun engageRecommendationEngine(list : List<track>): List<track> {
+                return list.shuffled()
+            }
         })
     }
 }
