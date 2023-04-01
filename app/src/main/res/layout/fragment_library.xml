@@ -9,18 +9,160 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="365dp"
-            android:layout_height="83dp"
-            android:fontFamily="@font/bakbakone_regular"
-            android:text="IN DEVELOPMENT..."
-            android:textColor="#FFF44336"
-            android:textSize="40sp"
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="479dp"
+            android:layout_height="926dp"
+            android:src="@drawable/home_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.652"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.514" />
+
+        <Button
+            android:id="@+id/btn_Tamil"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="TAMIL"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.339" />
+
+        <Button
+            android:id="@+id/btn_Drive"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="DRIVE"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.654" />
+
+        <Button
+            android:id="@+id/btn_Chill"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="CHILL"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.969" />
+
+        <Button
+            android:id="@+id/btn_Malayalam"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="MALAYALAM"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.339" />
+
+        <Button
+            android:id="@+id/btn_Pop"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="POP"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.654" />
+
+        <Button
+            android:id="@+id/btn_Party"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="PARTY"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.969" />
+
+        <Button
+            android:id="@+id/btn_Hindi"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="HINDI"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
+        <Button
+            android:id="@+id/btn_English"
+            android:layout_width="196dp"
+            android:layout_height="191dp"
+            android:background="@drawable/lib_shape"
+            android:backgroundTint="#BDA62C"
+            android:elegantTextHeight="true"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="ENGLISH"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -6,12 +6,32 @@
 
 package home
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import chill.chillActivity
+import com.alan.alansdk.AlanCallback
+import com.alan.alansdk.AlanConfig
+import com.alan.alansdk.events.EventCommand
 import com.codered.sonora.R
+import drive.driveActivity
+import english.engActivity
+import hindi.hindiActivity
+import login.signupActivity
+import malayalam.malayalamActivity
+import org.json.JSONException
+import party.partyActivity
+import pop.popActivity
+import tamil.tamilActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +43,15 @@ private const val ARG_PARAM2 = "param2"
  * Use the [libraryFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+private lateinit var english : Button
+private lateinit var hindi : Button
+private lateinit var malayalam : Button
+private lateinit var tamil : Button
+private lateinit var pop : Button
+private lateinit var drive : Button
+private lateinit var party : Button
+private lateinit var chill : Button
 class libraryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -63,4 +92,62 @@ class libraryFragment : Fragment() {
                 }
             }
     }
-}
+
+    @SuppressLint("UseRequireInsteadOfGet")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+
+        //RecyclerView Implementation
+         english = view.findViewById(R.id.btn_English)
+        english.setOnClickListener{
+            val intent = Intent (getActivity(), engActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        hindi = view.findViewById(R.id.btn_Hindi)
+        hindi.setOnClickListener {
+            val intent = Intent (getActivity(), hindiActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        malayalam = view.findViewById(R.id.btn_Malayalam)
+        malayalam.setOnClickListener {
+            val intent = Intent (getActivity(), malayalamActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        tamil = view.findViewById(R.id.btn_Tamil)
+        tamil.setOnClickListener {
+            val intent = Intent (getActivity(), tamilActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        pop = view.findViewById(R.id.btn_Pop)
+        pop.setOnClickListener {
+            val intent = Intent (getActivity(), popActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        drive = view.findViewById(R.id.btn_Drive)
+        drive.setOnClickListener {
+            val intent = Intent (getActivity(), driveActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        party = view.findViewById(R.id.btn_Party)
+        party.setOnClickListener {
+            val intent = Intent (getActivity(), partyActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        chill = view.findViewById(R.id.btn_Chill)
+        chill.setOnClickListener {
+            val intent = Intent (getActivity(), chillActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+
+        }
+
+    }
