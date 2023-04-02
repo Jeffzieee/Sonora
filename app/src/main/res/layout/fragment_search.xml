@@ -9,18 +9,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="365dp"
-            android:layout_height="83dp"
-            android:fontFamily="@font/bakbakone_regular"
-            android:text="IN DEVELOPMENT..."
-            android:textColor="#FFF44336"
-            android:textSize="40sp"
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="701dp"
+            android:layout_height="976dp"
+            android:src="@drawable/home_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.652"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.035" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="399dp"
+            android:layout_height="814dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:theme="@style/ThemeOverlay.SearchView"
+            android:layout_width="399dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/search_border"
+            android:backgroundTint="#1BC4C4C4"
+            android:focusable="false"
+            android:textSize="20sp"
+            app:closeIcon="@drawable/close"
+            app:iconifiedByDefault="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.588"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:queryHint="Search"
+            app:searchIcon="@drawable/ic_search" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
