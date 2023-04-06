@@ -23,9 +23,9 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="399dp"
-            android:layout_height="814dp"
+            android:id="@+id/searchrecyclerView"
+            android:layout_width="403dp"
+            android:layout_height="761dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/search"
+            android:id="@+id/searchBar"
             android:theme="@style/ThemeOverlay.SearchView"
             android:layout_width="399dp"
             android:layout_height="48dp"

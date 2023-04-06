@@ -8,9 +8,10 @@ package home
 
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.database.*
-import java.util.Collections
+import java.util.*
 
 class tracksRepository {
+    private lateinit var dataList: MutableLiveData<List<track>>
     private val databaseReference: DatabaseReference =
         FirebaseDatabase.getInstance().getReference("tracks").child("common")
 
@@ -41,12 +42,13 @@ class tracksRepository {
 
                     val recommended_tracks = engageRecommendationEngine(_trackList)
                     trackList.postValue(recommended_tracks)
+                    dataList.postValue(recommended_tracks)
 
                 } catch (e: Exception) {
 
 
                 }
-
+//
 
             }
 
@@ -61,4 +63,5 @@ class tracksRepository {
             }
         })
     }
+
 }

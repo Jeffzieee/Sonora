@@ -41,7 +41,7 @@ private const val ARG_PARAM2 = "param2"
  */
 private lateinit var viewModel : trackViewModel
 private lateinit var userRecyclerView: RecyclerView
-lateinit var adapter: recyclerAdapter
+private lateinit var adapter: recyclerAdapter
 
 class homeFragment : Fragment() {
     // TODO: Rename and change types of parameters
