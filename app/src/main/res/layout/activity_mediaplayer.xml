@@ -36,6 +36,39 @@
             app:srcCompat="@drawable/ic_logo_sonora"
             tools:ignore="MissingConstraints" />
 
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="100sp"
+            android:layout_marginEnd="10sp"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="Track Name"
+            android:textColor="#FFDFDBDB"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/artistText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="150sp"
+            android:layout_marginEnd="10sp"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="Artist"
+            android:textColor="#FFDFDBDB"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="320sp"
+            android:layout_marginTop="700sp"
+            android:layout_marginEnd="10sp"
+            android:text="Like" />
+
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"

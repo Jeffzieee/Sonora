@@ -94,6 +94,7 @@ class homeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /*
         //ALAN implementation Here
         val config = AlanConfig.builder().setProjectId("518fe85d398d74f635ae1a9d3483bb2e2e956eca572e1d8b807a3e2338fdd0dc/stage").build()
         alanButton = view.findViewById(R.id.alan_button)
@@ -114,6 +115,7 @@ class homeFragment : Fragment() {
 
 /// Register callbacks
         alanButton?.registerCallback(alanCallback);
+        */
 
         //RecyclerView Implementation
         userRecyclerView = view.findViewById(R.id.recyclerView)

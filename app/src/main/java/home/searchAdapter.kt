@@ -35,6 +35,8 @@ class searchAdapter(private val context : Context,private var trackList: Mutable
         val tracks = trackList[position]
         holder.artist.text = tracks.artist
         holder.title.text = tracks.title
+        holder.id.text = tracks.id
+        holder.mp3url.text = tracks.mp3url
 
         Glide.with(context)
             .load(tracks.imgurl)
@@ -44,6 +46,10 @@ class searchAdapter(private val context : Context,private var trackList: Mutable
         holder.itemView.setOnClickListener(){
             val intent = Intent(getActivity(context), mediaplayerActivity::class.java)
             intent.putExtra("imgUrl",tracks.imgurl)
+            intent.putExtra("title",tracks.title)
+            intent.putExtra("mp3url",tracks.mp3url)
+            intent.putExtra("id",tracks.id)
+            intent.putExtra("artist",tracks.artist)
             getActivity(context)?.startActivity(intent)
         }
 
@@ -56,6 +62,8 @@ class searchAdapter(private val context : Context,private var trackList: Mutable
         val imgurl : ImageView = itemView.findViewById(R.id.imgae)
         val title : TextView = itemView.findViewById(R.id.title)
         val artist : TextView = itemView.findViewById(R.id.artist)
+        val id : TextView = itemView.findViewById(R.id.id)
+        val mp3url : TextView = itemView.findViewById(R.id.view_mp3url)
     }
 
     @SuppressLint("NotifyDataSetChanged")

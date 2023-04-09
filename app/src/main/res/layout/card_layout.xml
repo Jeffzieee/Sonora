@@ -58,4 +58,17 @@
             android:textColor="#FFDFDBDB"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/view_mp3url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="invisible" />
+
 </androidx.cardview.widget.CardView>

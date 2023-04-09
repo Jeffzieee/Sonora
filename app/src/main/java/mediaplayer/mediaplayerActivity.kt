@@ -10,8 +10,10 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.codered.sonora.R
@@ -20,6 +22,7 @@ import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.MediaMetadata
 import com.google.android.exoplayer2.Player
+import com.google.firebase.database.*
 import dagger.hilt.android.qualifiers.ApplicationContext
 
 class mediaplayerActivity : AppCompatActivity(), Player.Listener{
@@ -28,6 +31,9 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
     private lateinit var playerView: PlayerView
     private lateinit var progressBar: ProgressBar
     private lateinit var titleTv: TextView
+    private lateinit var btnLike : Button
+    private lateinit var titleText : TextView
+    private lateinit var artistText : TextView
 
 
     @SuppressLint("MissingInflatedId")
@@ -36,7 +42,41 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
         setContentView(R.layout.activity_mediaplayer)
 
         var imgUrl = intent.extras?.getString("imgUrl")
+        var id = intent.extras?.getString("id")
+        var title = intent.extras?.getString("title")
+        var artist = intent.extras?.getString("artist")
         progressBar = findViewById(R.id.progressBar)
+        titleText =  findViewById(R.id.titleText)
+        artistText = findViewById(R.id.artistText)
+
+        titleText.text = title
+        artistText.text = artist
+        btnLike = findViewById(R.id.btnLike)
+
+        btnLike.setOnClickListener {
+
+            val musicItemsRef = FirebaseDatabase.getInstance().getReference("tracks").child("common")
+            if (id != null) {
+                musicItemsRef.child(id).child("likes").addListenerForSingleValueEvent(object :
+                    ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        val currentLikes = dataSnapshot.getValue(Int::class.java) ?: 0
+                        val updatedLikes = currentLikes + 1
+                        musicItemsRef.child(id).child("likes").setValue(updatedLikes)
+
+                        Toast.makeText(applicationContext,"Liked Track",
+                            Toast.LENGTH_LONG).show()
+                    }
+
+                    override fun onCancelled(databaseError: DatabaseError) {
+                        // Handle database error
+                        Toast.makeText(applicationContext,"Database Error",
+                            Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
+
+        }
 
         titleTv = findViewById(R.id.title)
         Glide.with(applicationContext)
@@ -69,10 +109,15 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
 
     private fun addMP3() {
         // Build the media item.
-        val mediaItem = MediaItem.fromUri("https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/labrithEuphoria.mp3?alt=media&token=bd4104c6-a512-4df1-acae-84f59499ea66")
-        player.setMediaItem(mediaItem)
+        var mp3url = intent.extras?.getString("mp3url")
+        val mediaItem = mp3url?.let { MediaItem.fromUri(it) }
+        if (mediaItem != null) {
+            player.setMediaItem(mediaItem)
+        }
         // Set the media item to be played.
-        player.setMediaItem(mediaItem)
+        if (mediaItem != null) {
+            player.setMediaItem(mediaItem)
+        }
         // Prepare the player.
         player.prepare()
     }

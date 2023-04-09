@@ -6,4 +6,4 @@
 
 package home
 
-data class track(var imgurl : String ?= null, var title : String ?= null, var artist : String ?= null)
+data class track(var imgurl : String ?= null, var mp3url : String ?= null , var title : String ?= null, var artist : String ?= null, var likes : Int ?= null, var id : String ?= null)
