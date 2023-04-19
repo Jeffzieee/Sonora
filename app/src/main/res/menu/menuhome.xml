@@ -14,8 +14,8 @@
        android:icon = "@drawable/ic_library"/>
    <item
        android:id="@+id/upgrade"
-       android:title = "Upgrade"
-       android:icon = "@drawable/ic_upgrade"/>
+       android:icon="@drawable/ic_upgrade"
+       android:title="About" />
 
 
 </menu>

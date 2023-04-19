@@ -72,8 +72,6 @@ class loginActivity : AppCompatActivity() {
             .build()
 
         binding.txtBio.setOnClickListener{
-            Toast.makeText(applicationContext,"Button Clicked",
-                Toast.LENGTH_LONG).show()
             biometricPrompt.authenticate(promptInfo)
         }
 

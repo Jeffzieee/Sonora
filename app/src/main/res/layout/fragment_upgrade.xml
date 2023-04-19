@@ -9,18 +9,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="365dp"
-            android:layout_height="83dp"
-            android:fontFamily="@font/bakbakone_regular"
-            android:text="IN DEVELOPMENT..."
-            android:textColor="#FFF44336"
-            android:textSize="40sp"
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="479dp"
+            android:layout_height="926dp"
+            android:src="@drawable/home_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.652"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.514" />
+
+        <ImageView
+            android:id="@+id/audioImg"
+            android:layout_width="wrap_content"
+            android:layout_height="345dp"
+            android:background="@drawable/curve_shape_two"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.43"
+            app:srcCompat="@drawable/ic_logo_sonora"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="362dp"
+            android:layout_height="110dp"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="              Sonora \n AI Powered Music Player"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.326"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.083" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="259dp"
+            android:layout_height="194dp"
+            android:fontFamily="@font/bakbakone_regular"
+            android:text="Developed By \n Jephin John \n Jibi Ann \n Melvin Joseph \n Roshan Roy"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.348"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.872" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

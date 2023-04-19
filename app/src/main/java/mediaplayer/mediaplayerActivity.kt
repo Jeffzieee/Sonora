@@ -55,6 +55,8 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
 
         btnLike.setOnClickListener {
 
+            btnLike.setBackgroundResource(R.drawable.filllike)
+
             val musicItemsRef = FirebaseDatabase.getInstance().getReference("tracks").child("common")
             if (id != null) {
                 musicItemsRef.child(id).child("likes").addListenerForSingleValueEvent(object :
