@@ -3,6 +3,7 @@
     package="com.codered.sonora">
 
     <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
     <application
         android:allowBackup="true"
@@ -51,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="home.homeActivity"
+            android:name="login.loginActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -77,7 +78,7 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="login.loginActivity"
+            android:name="home.homeActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>

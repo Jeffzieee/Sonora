@@ -14,12 +14,17 @@ import android.os.SystemClock
 import android.widget.Toast
 import com.codered.sonora.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
+import java.util.concurrent.Executor
 
 class loginActivity : AppCompatActivity() {
     //variable declaratiopn
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
-
+    private lateinit var executor: Executor
+    private lateinit var biometricPrompt: BiometricPrompt
+    private lateinit var promptInfo : BiometricPrompt.PromptInfo
 
     var currentTime : Long = 0L
 
@@ -29,8 +34,47 @@ class loginActivity : AppCompatActivity() {
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.txtBio.setOnClickListener{
+        executor = ContextCompat.getMainExecutor(this)
 
+        biometricPrompt = BiometricPrompt(this, executor,
+        object : BiometricPrompt.AuthenticationCallback(){
+
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                super.onAuthenticationError(errorCode, errString)
+
+                Toast.makeText(applicationContext," Error " + errString,
+                    Toast.LENGTH_LONG).show()
+            }
+
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
+
+                Toast.makeText(applicationContext,"Biometric Authentication Successful",
+                    Toast.LENGTH_LONG).show()
+                val intent = Intent(this@loginActivity,home.homeActivity::class.java)
+                startActivity(intent)
+
+            }
+
+            override fun onAuthenticationFailed() {
+                super.onAuthenticationFailed()
+
+                Toast.makeText(applicationContext,"Biometric Authentication Failed",
+                    Toast.LENGTH_LONG).show()
+            }
+
+        })
+
+        promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Biometric Login for My App")
+            .setSubtitle("Use your Biometric Login Credentials")
+            .setNegativeButtonText("Cancel")
+            .build()
+
+        binding.txtBio.setOnClickListener{
+            Toast.makeText(applicationContext,"Button Clicked",
+                Toast.LENGTH_LONG).show()
+            biometricPrompt.authenticate(promptInfo)
         }
 
 
