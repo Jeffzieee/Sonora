@@ -19,6 +19,8 @@ class loginActivity : AppCompatActivity() {
     //variable declaratiopn
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+
+
     var currentTime : Long = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,13 @@ class loginActivity : AppCompatActivity() {
         //binding layout data
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.txtBio.setOnClickListener{
+
+        }
+
+
+        //Firebase
         firebaseAuth = FirebaseAuth.getInstance()
 
 
@@ -56,6 +65,9 @@ class loginActivity : AppCompatActivity() {
             }
             currentTime  = SystemClock.elapsedRealtime()
         }
+
+        //Biometric Authentication
+
 
         //Intenting to Sign Up
         binding.signupTextView.setOnClickListener{

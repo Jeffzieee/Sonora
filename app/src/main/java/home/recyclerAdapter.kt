@@ -22,9 +22,10 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.codered.sonora.R
 import com.google.android.material.internal.ContextUtils.getActivity
 import mediaplayer.mediaplayerActivity
+import java.security.AccessControlContext
 import java.security.AccessController.getContext
 
-class recyclerAdapter(private val context : Context) : RecyclerView.Adapter<recyclerAdapter.MyViewHolder>(){
+class recyclerAdapter(private val context: Context) : RecyclerView.Adapter<recyclerAdapter.MyViewHolder>(){
 
     private val trackList = ArrayList<track>()
 
