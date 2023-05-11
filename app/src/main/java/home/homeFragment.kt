@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,6 +38,7 @@ private const val ARG_PARAM2 = "param2"
 private lateinit var viewModel : trackViewModel
 private lateinit var userRecyclerView: RecyclerView
 private lateinit var adapter: recyclerAdapter
+private lateinit var testBtn : Button
 
 class homeFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -89,7 +91,7 @@ class homeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-/*
+
         //ALAN implementation Here
         val config = AlanConfig.builder().setProjectId("518fe85d398d74f635ae1a9d3483bb2e2e956eca572e1d8b807a3e2338fdd0dc/stage").build()
         alanButton = view.findViewById(R.id.alan_button)
@@ -101,7 +103,31 @@ class homeFragment : Fragment() {
                 try {
                     val command = eventCommand.data
                     val commandName = command.getJSONObject("data").getString("command")
-                    Log.d("AlanButton", "onCommand: commandName: $commandName")
+                    when(commandName){
+                        "openLibrary" -> {
+                            val fragment2 : Fragment = libraryFragment()
+                            val fragmentManager = parentFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_Container, fragment2)
+                            transaction.commit()
+                        }
+
+                        "openSearch" -> {
+                            val fragment2 : Fragment = searchFragment()
+                            val fragmentManager = parentFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_Container, fragment2)
+                            transaction.commit()
+                        }
+
+                        "openAbout" -> {
+                            val fragment2 : Fragment = upgradeFragment()
+                            val fragmentManager = parentFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_Container, fragment2)
+                            transaction.commit()
+                        }
+                    }
                 } catch (e: JSONException) {
                     e.message?.let { Log.e("AlanButton", it) }
                 }
@@ -111,7 +137,24 @@ class homeFragment : Fragment() {
 /// Register callbacks
         alanButton?.registerCallback(alanCallback);
 
-*/
+
+        testBtn = view.findViewById(R.id.switchBtn)
+        testBtn.setOnClickListener{
+            val fragment2 : Fragment = libraryFragment()
+            val fragmentManager = parentFragmentManager
+
+            // Begin a new transaction.
+            val transaction = fragmentManager.beginTransaction()
+
+            // Replace the current fragment with the new one.
+            transaction.replace(R.id.fragment_Container, fragment2)
+
+            // Add the transaction to the back stack, so the user can navigate back to the previous fragment.
+
+            // Commit the transaction.
+            transaction.commit()
+        }
+
         //RecyclerView Implementation
         userRecyclerView = view.findViewById(R.id.recyclerView)
         userRecyclerView.layoutManager = LinearLayoutManager(context)

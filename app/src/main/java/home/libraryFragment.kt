@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView
 import chill.chillActivity
 import com.alan.alansdk.AlanCallback
 import com.alan.alansdk.AlanConfig
+import com.alan.alansdk.button.AlanButton
 import com.alan.alansdk.events.EventCommand
 import com.codered.sonora.R
 import drive.driveActivity
@@ -56,6 +57,7 @@ class libraryFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var alanButton: AlanButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -97,7 +99,50 @@ class libraryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //ALAN implementation Here
+        val config = AlanConfig.builder().setProjectId("518fe85d398d74f635ae1a9d3483bb2e2e956eca572e1d8b807a3e2338fdd0dc/stage").build()
+        alanButton = view.findViewById(R.id.alan_button)
+        alanButton?.initWithConfig(config)
 
+        val alanCallback: AlanCallback = object : AlanCallback() {
+            /// Handle commands from Alan Studio
+            override fun onCommand(eventCommand: EventCommand) {
+                try {
+                    val command = eventCommand.data
+                    val commandName = command.getJSONObject("data").getString("command")
+                    when(commandName){
+                        "openHome" -> {
+                            val fragment2 : Fragment = homeFragment()
+                            val fragmentManager = parentFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_Container, fragment2)
+                            transaction.commit()
+                        }
+
+                        "openSearch" -> {
+                            val fragment2 : Fragment = searchFragment()
+                            val fragmentManager = parentFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_Container, fragment2)
+                            transaction.commit()
+                        }
+
+                        "openAbout" -> {
+                            val fragment2 : Fragment = upgradeFragment()
+                            val fragmentManager = parentFragmentManager
+                            val transaction = fragmentManager.beginTransaction()
+                            transaction.replace(R.id.fragment_Container, fragment2)
+                            transaction.commit()
+                        }
+                    }
+                } catch (e: JSONException) {
+                    e.message?.let { Log.e("AlanButton", it) }
+                }
+            }
+        };
+
+/// Register callbacks
+        alanButton?.registerCallback(alanCallback);
 
         //RecyclerView Implementation
          english = view.findViewById(R.id.btn_English)
