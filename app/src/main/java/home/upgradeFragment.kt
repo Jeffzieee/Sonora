@@ -6,6 +6,7 @@
 
 package home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,12 +14,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import chill.chillActivity
 import com.alan.alansdk.AlanCallback
 import com.alan.alansdk.AlanConfig
 import com.alan.alansdk.button.AlanButton
 import com.alan.alansdk.events.EventCommand
 import com.codered.sonora.R
+import drive.driveActivity
+import english.engActivity
+import hindi.hindiActivity
+import malayalam.malayalamActivity
 import org.json.JSONException
+import party.partyActivity
+import pop.popActivity
+import tamil.tamilActivity
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -112,6 +121,47 @@ class upgradeFragment : Fragment() {
                             transaction.replace(R.id.fragment_Container, fragment2)
                             transaction.commit()
                         }
+
+                        "openEnglish" -> {
+                            val intent = Intent (getActivity(), engActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openHindi" -> {
+                            val intent = Intent (getActivity(), hindiActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openMalayalam" -> {
+                            val intent = Intent (getActivity(), malayalamActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openTamil" -> {
+                            val intent = Intent (getActivity(), tamilActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openPop" -> {
+                            val intent = Intent (getActivity(), popActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openDrive" -> {
+                            val intent = Intent (getActivity(), driveActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openParty" -> {
+                            val intent = Intent (getActivity(), partyActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openChill" -> {
+                            val intent = Intent (getActivity(), chillActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
                     }
                 } catch (e: JSONException) {
                     e.message?.let { Log.e("AlanButton", it) }

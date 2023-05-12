@@ -7,13 +7,21 @@
 package mediaplayer
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import chill.chillActivity
+import com.alan.alansdk.AlanCallback
+import com.alan.alansdk.AlanConfig
+import com.alan.alansdk.button.AlanButton
+import com.alan.alansdk.events.EventCommand
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.codered.sonora.R
@@ -24,6 +32,17 @@ import com.google.android.exoplayer2.MediaMetadata
 import com.google.android.exoplayer2.Player
 import com.google.firebase.database.*
 import dagger.hilt.android.qualifiers.ApplicationContext
+import drive.driveActivity
+import english.engActivity
+import hindi.hindiActivity
+import home.libraryFragment
+import home.searchFragment
+import home.upgradeFragment
+import malayalam.malayalamActivity
+import org.json.JSONException
+import party.partyActivity
+import pop.popActivity
+import tamil.tamilActivity
 
 class mediaplayerActivity : AppCompatActivity(), Player.Listener{
 
@@ -34,6 +53,7 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
     private lateinit var btnLike : Button
     private lateinit var titleText : TextView
     private lateinit var artistText : TextView
+    private var alanButton: AlanButton? = null
 
 
     @SuppressLint("MissingInflatedId")
@@ -46,7 +66,7 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
         var title = intent.extras?.getString("title")
         var artist = intent.extras?.getString("artist")
         progressBar = findViewById(R.id.progressBar)
-        titleText =  findViewById(R.id.titleText)
+        titleText = findViewById(R.id.titleText)
         artistText = findViewById(R.id.artistText)
 
         titleText.text = title
@@ -57,7 +77,8 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
 
             btnLike.setBackgroundResource(R.drawable.filllike)
 
-            val musicItemsRef = FirebaseDatabase.getInstance().getReference("tracks").child("common")
+            val musicItemsRef =
+                FirebaseDatabase.getInstance().getReference("tracks").child("common")
             if (id != null) {
                 musicItemsRef.child(id).child("likes").addListenerForSingleValueEvent(object :
                     ValueEventListener {
@@ -66,14 +87,18 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
                         val updatedLikes = currentLikes + 1
                         musicItemsRef.child(id).child("likes").setValue(updatedLikes)
 
-                        Toast.makeText(applicationContext,"Liked Track",
-                            Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            applicationContext, "Liked Track",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
                     override fun onCancelled(databaseError: DatabaseError) {
                         // Handle database error
-                        Toast.makeText(applicationContext,"Database Error",
-                            Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            applicationContext, "Database Error",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 })
             }
@@ -90,7 +115,6 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
         addMP3()
 
 
-
         // restore playstate on Rotation
         if (savedInstanceState != null) {
             if (savedInstanceState.getInt("mediaItem") != 0) {
@@ -100,6 +124,33 @@ class mediaplayerActivity : AppCompatActivity(), Player.Listener{
                 player.play()
             }
         }
+
+        val config = AlanConfig.builder()
+            .setProjectId("518fe85d398d74f635ae1a9d3483bb2e2e956eca572e1d8b807a3e2338fdd0dc/stage")
+            .build()
+        alanButton = findViewById(R.id.alan_button)
+        alanButton?.initWithConfig(config)
+
+        val alanCallback: AlanCallback = object : AlanCallback() {
+            /// Handle commands from Alan Studio
+            override fun onCommand(eventCommand: EventCommand) {
+                try {
+                    val command = eventCommand.data
+                    val commandName = command.getJSONObject("data").getString("command")
+                    when (commandName) {
+                        "goBack" -> {
+                            finish()
+                        }
+                    }
+                }
+                catch (e: JSONException) {
+                    e.message?.let { Log.e("AlanButton", it) }
+                }
+            }
+        };
+
+        /// Register callbacks
+        alanButton?.registerCallback(alanCallback);
     }
 
     private fun setupPlayer() {

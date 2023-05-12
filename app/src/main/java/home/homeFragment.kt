@@ -7,6 +7,7 @@
 package home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -14,16 +15,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import chill.chillActivity
 import com.alan.alansdk.AlanCallback
 import com.alan.alansdk.AlanConfig
 import com.alan.alansdk.button.AlanButton
 import com.alan.alansdk.events.EventCommand
 import com.codered.sonora.R
+import com.google.android.material.internal.ContextUtils
+import drive.driveActivity
+import english.engActivity
+import hindi.hindiActivity
+import malayalam.malayalamActivity
+import mediaplayer.mediaplayerActivity
 import org.json.JSONException
+import party.partyActivity
+import pop.popActivity
+import tamil.tamilActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -126,6 +138,56 @@ class homeFragment : Fragment() {
                             val transaction = fragmentManager.beginTransaction()
                             transaction.replace(R.id.fragment_Container, fragment2)
                             transaction.commit()
+                        }
+
+                        "openEnglish" -> {
+                            val intent = Intent (getActivity(), engActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openHindi" -> {
+                            val intent = Intent (getActivity(), hindiActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openMalayalam" -> {
+                            val intent = Intent (getActivity(), malayalamActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openTamil" -> {
+                            val intent = Intent (getActivity(), tamilActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openPop" -> {
+                            val intent = Intent (getActivity(), popActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openDrive" -> {
+                            val intent = Intent (getActivity(), driveActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openParty" -> {
+                            val intent = Intent (getActivity(), partyActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openChill" -> {
+                            val intent = Intent (getActivity(), chillActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "playEnglish" -> {
+                            val intent = Intent(getActivity(), mediaplayerActivity::class.java)
+                            intent.putExtra("imgUrl","https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgAsitwas.jpg?alt=media&token=cfa69d0f-6722-49ff-b9ac-30c8698f4f21")
+                            intent.putExtra("title","As It Was")
+                            intent.putExtra("mp3url","https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/mp3Asitwas.mp3?alt=media&token=7831f711-057d-4e2d-b19d-82f5da7a3b7e")
+                            intent.putExtra("id","1")
+                            intent.putExtra("artist","Harry Styles")
+                            getActivity()?.startActivity(intent)
                         }
                     }
                 } catch (e: JSONException) {

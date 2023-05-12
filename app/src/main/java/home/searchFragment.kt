@@ -7,6 +7,7 @@
 package home
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -19,14 +20,22 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import chill.chillActivity
 import com.alan.alansdk.AlanCallback
 import com.alan.alansdk.AlanConfig
 import com.alan.alansdk.button.AlanButton
 import com.alan.alansdk.events.EventCommand
 import com.codered.sonora.R
 import com.google.firebase.database.*
+import drive.driveActivity
+import english.engActivity
+import hindi.hindiActivity
 import kotlinx.android.synthetic.main.fragment_search.*
+import malayalam.malayalamActivity
 import org.json.JSONException
+import party.partyActivity
+import pop.popActivity
+import tamil.tamilActivity
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -157,6 +166,46 @@ class searchFragment : Fragment() {
                             val transaction = fragmentManager.beginTransaction()
                             transaction.replace(R.id.fragment_Container, fragment2)
                             transaction.commit()
+                        }
+
+                        "openEnglish" -> {
+                            val intent = Intent (getActivity(), engActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openHindi" -> {
+                            val intent = Intent (getActivity(), hindiActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openMalayalam" -> {
+                            val intent = Intent (getActivity(), malayalamActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openTamil" -> {
+                            val intent = Intent (getActivity(), tamilActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openPop" -> {
+                            val intent = Intent (getActivity(), popActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openDrive" -> {
+                            val intent = Intent (getActivity(), driveActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openParty" -> {
+                            val intent = Intent (getActivity(), partyActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openChill" -> {
+                            val intent = Intent (getActivity(), chillActivity::class.java)
+                            getActivity()?.startActivity(intent)
                         }
                     }
                 } catch (e: JSONException) {

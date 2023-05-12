@@ -134,6 +134,46 @@ class libraryFragment : Fragment() {
                             transaction.replace(R.id.fragment_Container, fragment2)
                             transaction.commit()
                         }
+
+                        "openEnglish" -> {
+                            val intent = Intent (getActivity(), engActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openHindi" -> {
+                            val intent = Intent (getActivity(), hindiActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openMalayalam" -> {
+                            val intent = Intent (getActivity(), malayalamActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openTamil" -> {
+                            val intent = Intent (getActivity(), tamilActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openPop" -> {
+                            val intent = Intent (getActivity(), popActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openDrive" -> {
+                            val intent = Intent (getActivity(), driveActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openParty" -> {
+                            val intent = Intent (getActivity(), partyActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
+
+                        "openChill" -> {
+                            val intent = Intent (getActivity(), chillActivity::class.java)
+                            getActivity()?.startActivity(intent)
+                        }
                     }
                 } catch (e: JSONException) {
                     e.message?.let { Log.e("AlanButton", it) }
