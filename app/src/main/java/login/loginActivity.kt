@@ -11,11 +11,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.widget.Toast
 import com.codered.sonora.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import com.alan.alansdk.AlanCallback
+import com.alan.alansdk.AlanConfig
+import com.alan.alansdk.events.EventCommand
+import com.codered.sonora.R
+import org.json.JSONException
 import java.util.concurrent.Executor
 
 class loginActivity : AppCompatActivity() {
@@ -122,7 +128,43 @@ class loginActivity : AppCompatActivity() {
             currentTime  = SystemClock.elapsedRealtime()
         }
 
+        val config = AlanConfig.builder()
+            .setProjectId("518fe85d398d74f635ae1a9d3483bb2e2e956eca572e1d8b807a3e2338fdd0dc/stage")
+            .build()
+
+        binding.alanButton?.initWithConfig(config)
+
+        val alanCallback: AlanCallback = object : AlanCallback() {
+            /// Handle commands from Alan Studio
+            override fun onCommand(eventCommand: EventCommand) {
+                try {
+                    val command = eventCommand.data
+                    val commandName = command.getJSONObject("data").getString("command")
+                    when (commandName) {
+                        "openAuth" -> {
+                            biometricPrompt.authenticate(promptInfo)
+                        }
+
+                        "openSignup" -> {
+                            val intent  = Intent(this@loginActivity,signupActivity::class.java)
+                            startActivity(intent)
+                        }
+
+                        "goBack" -> {
+                            finish()
+                        }
+
+                    }
+                }
+                catch (e: JSONException) {
+                    e.message?.let { Log.e("AlanButton", it) }
+                }
+            }
+        };
+
+        /// Register callbacks
+        binding.alanButton?.registerCallback(alanCallback);
+    }
 
 
     }
-}

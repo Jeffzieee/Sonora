@@ -36,6 +36,7 @@ import org.json.JSONException
 import party.partyActivity
 import pop.popActivity
 import tamil.tamilActivity
+import kotlin.random.Random
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -181,12 +182,20 @@ class homeFragment : Fragment() {
                         }
 
                         "playEnglish" -> {
+
+                            val titleList = listOf("As It Was", "Still Don't Know My Name", "Don't Wanna Know", "Bones", "No Lie")
+                            val artistList = listOf("Harry Styles", "Labrinth", "Maroon 5", "Imagine Dragons", "Sean Paul")
+                            val idList = listOf("1","2","3","4","5")
+                            val imgList = listOf("https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgAsitwas.jpg?alt=media&token=cfa69d0f-6722-49ff-b9ac-30c8698f4f21", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgStill.jpg?alt=media&token=dd9a63ab-e752-485f-8d60-63b56d9dbd17", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgDont.jpg?alt=media&token=302f98e4-96f7-48bd-af95-2f4da7c7db70", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgBones.jpg?alt=media&token=9af22da1-c69d-4a69-87ef-81dadd352f26", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgNolie.jpg?alt=media&token=e0aa8bdb-70a3-47d1-b5f5-7d03fb644e7b")
+                            val mp3List = listOf("https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/mp3Asitwas.mp3?alt=media&token=7831f711-057d-4e2d-b19d-82f5da7a3b7e", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/labrithEuphoria.mp3?alt=media&token=bd4104c6-a512-4df1-acae-84f59499ea66", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/mp3Dont.mp3?alt=media&token=c7580862-e5c2-45fd-9a3e-6bff039633f1", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/mp3Bones.mp3?alt=media&token=70446f72-6e19-4937-a6a1-cb777c10e5b4", "https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/mp3NoLie.mp3?alt=media&token=d0fb52b7-98d8-41be-9f03-0dc5d7423ef1")
+                            val index = Random.nextInt(idList.size)
+
                             val intent = Intent(getActivity(), mediaplayerActivity::class.java)
-                            intent.putExtra("imgUrl","https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/imgAsitwas.jpg?alt=media&token=cfa69d0f-6722-49ff-b9ac-30c8698f4f21")
-                            intent.putExtra("title","As It Was")
-                            intent.putExtra("mp3url","https://firebasestorage.googleapis.com/v0/b/sonora-b64bc.appspot.com/o/mp3Asitwas.mp3?alt=media&token=7831f711-057d-4e2d-b19d-82f5da7a3b7e")
-                            intent.putExtra("id","1")
-                            intent.putExtra("artist","Harry Styles")
+                            intent.putExtra("imgUrl",imgList[index])
+                            intent.putExtra("title",titleList[index])
+                            intent.putExtra("mp3url",mp3List[index])
+                            intent.putExtra("id",idList[index])
+                            intent.putExtra("artist",artistList[index])
                             getActivity()?.startActivity(intent)
                         }
                     }
